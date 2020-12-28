@@ -10,7 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using lingowords.Data;
+using lingowords.Repositories;
+using lingowords.Services;
 
 namespace lingowords
 {
@@ -27,7 +28,8 @@ namespace lingowords
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddTransient<WordsRepository, TextFileWordsRepository>();
+            services.AddTransient<IWordsRepository, TextFileWordsRepository>();
+            services.AddTransient<IWordsService, DutchWordsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,7 +48,7 @@ namespace lingowords
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
