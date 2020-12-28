@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using lingowords.Data;
 
 namespace lingowords
 {
@@ -26,6 +27,7 @@ namespace lingowords
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTransient<WordsRepository, TextFileWordsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
