@@ -5,22 +5,9 @@ using System.Threading.Tasks;
 
 namespace lingowords.Domain
 {
-    public class Word
+    public enum Language
     {
-        public string word { get;}
-        public int length { get; }
-        public string lang { get; }
-
-        public Word(string _word)
-        {
-            word = _word;
-        }
-
-        public Word(string _word, int _length, string _lang)
-        {
-            word = _word;
-            length = _length;
-            lang = _lang;
-        }
+        Dutch = 0,
+        English = 1
     }
 }
