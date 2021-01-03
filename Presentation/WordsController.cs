@@ -22,9 +22,6 @@ namespace lingowords.Controller
         }
 
         [HttpGet]
-        public IList<Word> Get()
-        {
-            return wordService.CheckWords();
-        }
+        public IList<Word> Get() => wordService.CheckWords();
     }
 }
