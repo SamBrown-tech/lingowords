@@ -1,26 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace lingowords.Domain
+﻿namespace lingowords.Domain
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
     public class Word
     {
-        public string Title { get;}
+        public string Title { get; }
         public int Length { get; }
         public string Lang { get; }
 
-        public Word(string _title)
+        public Word(string title)
         {
-            Title = _title;
+            Title = title;
         }
 
-        public Word(string _title, int _length, string _lang)
+        public Word(string title, int length, string lang)
         {
-            Title = _title;
-            Length = _length;
-            Lang = _lang;
+            Title = title;
+            Length = length;
+            Lang = lang;
         }
     }
 }
